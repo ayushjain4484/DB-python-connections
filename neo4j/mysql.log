@@ -1,0 +1,61 @@
+DEBUG:neo4j:[#0000]  _: <POOL> created, direct address IPv4Address(('localhost', 7687))
+INFO:root:Time to connect: 0.004193544387817383
+DEBUG:neo4j:[#0000]  _: <POOL> acquire direct connection, access_mode='WRITE', database=None
+DEBUG:neo4j:[#0000]  _: <POOL> trying to hand out new connection
+DEBUG:neo4j:[#0000]  _: <RESOLVE> in: localhost:7687
+DEBUG:neo4j:[#0000]  _: <RESOLVE> dns resolver out: [::1]:7687
+DEBUG:neo4j:[#0000]  C: <OPEN> [::1]:7687
+DEBUG:neo4j:[#E468]  C: <MAGIC> 0x6060B017
+DEBUG:neo4j:[#E468]  C: <HANDSHAKE> 0x00000005 0x00020404 0x00000104 0x00000003
+DEBUG:neo4j:[#E468]  S: <HANDSHAKE> 0x00000005
+DEBUG:neo4j:[#E468]  C: HELLO {'user_agent': 'neo4j-python/5.5.0 Python/3.9.14-final-0 (linux)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+DEBUG:neo4j:[#E468]  S: SUCCESS {'server': 'Neo4j/5.3.0', 'connection_id': 'bolt-114', 'hints': {'connection.recv_timeout_seconds': 120}}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: CONNECTED > READY
+DEBUG:neo4j:[#E468]  C: RUN 'CREATE (:Person {name: $name, age: $age})' {'name': 'Alice', 'age': 25} {}
+DEBUG:neo4j:[#E468]  C: PULL {'n': 1000}
+DEBUG:neo4j:[#E468]  S: SUCCESS {'t_first': 19, 'fields': []}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: READY > STREAMING
+DEBUG:neo4j:[#E468]  S: SUCCESS {'bookmark': 'FB:kcwQa2125DRtQrK2wusoIiNerw2Q', 'stats': {'labels-added': 1, 'nodes-created': 1, 'properties-set': 2}, 'type': 'w', 't_last': 0, 'db': 'neo4j'}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: STREAMING > READY
+DEBUG:neo4j:[#E468]  _: <POOL> released bolt-114
+DEBUG:neo4j:[#0000]  _: <POOL> acquire direct connection, access_mode='WRITE', database=None
+DEBUG:neo4j:[#E468]  _: <POOL> handing out existing connection bolt-114
+DEBUG:neo4j:[#E468]  C: RUN 'CREATE (:Person {name: $name, age: $age})' {'name': 'Bob', 'age': 30} {'bookmarks': ['FB:kcwQa2125DRtQrK2wusoIiNerw2Q']}
+DEBUG:neo4j:[#E468]  C: PULL {'n': 1000}
+DEBUG:neo4j:[#E468]  S: SUCCESS {'t_first': 14, 'fields': []}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: READY > STREAMING
+DEBUG:neo4j:[#E468]  S: SUCCESS {'bookmark': 'FB:kcwQa2125DRtQrK2wusoIiNerw6Q', 'stats': {'labels-added': 1, 'nodes-created': 1, 'properties-set': 2}, 'type': 'w', 't_last': 1, 'db': 'neo4j'}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: STREAMING > READY
+DEBUG:neo4j:[#E468]  _: <POOL> released bolt-114
+DEBUG:neo4j:[#0000]  _: <POOL> acquire direct connection, access_mode='WRITE', database=None
+DEBUG:neo4j:[#E468]  _: <POOL> handing out existing connection bolt-114
+DEBUG:neo4j:[#E468]  C: RUN 'CREATE (:Person {name: $name, age: $age})' {'name': 'Charlie', 'age': 35} {'bookmarks': ['FB:kcwQa2125DRtQrK2wusoIiNerw6Q']}
+DEBUG:neo4j:[#E468]  C: PULL {'n': 1000}
+DEBUG:neo4j:[#E468]  S: SUCCESS {'t_first': 11, 'fields': []}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: READY > STREAMING
+DEBUG:neo4j:[#E468]  S: SUCCESS {'bookmark': 'FB:kcwQa2125DRtQrK2wusoIiNerw+Q', 'stats': {'labels-added': 1, 'nodes-created': 1, 'properties-set': 2}, 'type': 'w', 't_last': 0, 'db': 'neo4j'}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: STREAMING > READY
+DEBUG:neo4j:[#E468]  _: <POOL> released bolt-114
+INFO:root:Time to insert records: 0.2600734233856201
+DEBUG:neo4j:[#0000]  _: <POOL> acquire direct connection, access_mode='WRITE', database=None
+DEBUG:neo4j:[#E468]  _: <POOL> handing out existing connection bolt-114
+DEBUG:neo4j:[#E468]  C: RUN 'MATCH (p:Person) RETURN p.name, p.age' {} {}
+DEBUG:neo4j:[#E468]  C: PULL {'n': 1000}
+DEBUG:neo4j:[#E468]  S: SUCCESS {'t_first': 9, 'fields': ['p.name', 'p.age']}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: READY > STREAMING
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: RECORD * 1
+DEBUG:neo4j:[#E468]  S: SUCCESS {'bookmark': 'FB:kcwQa2125DRtQrK2wusoIiNerw+Q', 'type': 'r', 't_last': 5, 'db': 'neo4j'}
+DEBUG:neo4j:[#E468]  _: <CONNECTION> state: STREAMING > READY
+DEBUG:neo4j:[#E468]  _: <POOL> released bolt-114
+INFO:root:Time to retrieve records: 0.03853130340576172
+DEBUG:neo4j:[#0000]  _: <POOL> close
+DEBUG:neo4j:[#E468]  C: GOODBYE
+DEBUG:neo4j:[#E468]  C: <CLOSE>

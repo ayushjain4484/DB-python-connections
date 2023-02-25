@@ -1,0 +1,3 @@
+INFO:root:Time taken to connect: 0.015657901763916016
+INFO:root:Time taken to insert into database: 1.448965072631836
+INFO:root:Time taken to retrieve from database: 0.008452892303466797

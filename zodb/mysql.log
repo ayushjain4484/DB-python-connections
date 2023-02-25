@@ -1,0 +1,10 @@
+DEBUG:ZODB.BaseStorage:create storage objectdbFiles/mydata.fs
+DEBUG:txn.140512888624960:new transaction
+DEBUG:txn.140512888624960:commit <Connection at 7fcbb39277f0>
+DEBUG:txn.140512888624960:commit
+INFO:root:Time to connect: 0.00032830238342285156
+DEBUG:txn.140512888624960:new transaction
+DEBUG:txn.140512888624960:commit <Connection at 7fcbb39277f0>
+DEBUG:txn.140512888624960:commit
+INFO:root:Time to insert records: 0.1453864574432373
+INFO:root:Time to retrieve records: 0.0002446174621582031

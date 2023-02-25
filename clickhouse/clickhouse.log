@@ -1,0 +1,4 @@
+INFO:root:Time to connect: 0.06634259223937988
+DEBUG:clickhouse_connect.driver.httpclient:Insert response code: 200, content: b''
+INFO:root:Time to insert data: 0.2790093421936035
+INFO:root:Time to retrieve data: 0.02374553680419922
